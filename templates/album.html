@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-md-4" id="temp1">
+		<div id="container-one">
+			<h1>{{ album.title }}</h1>
+			<div class="songList">
+				<div class="songItemContainer">
+					{% for i in range(album.songs | length) %}
+					<div class="songItem">
+						<img alt="1" src="{{ album.songs[i].image }}">
+						<span class="songName">{{ album.songs[i].title }}</span>
+						<span class="songlistplay"><span class="timestamp">05:34 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+					</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div id="container-mid">
+			<div id="lyrics" class="">
+				<p>
+					My tea's gone cold<br>
+					I'm wondering why I got out of bed at all<br>
+					The morning rain clouds up my window<br>
+					<br>
+					And I can't see at all<br>
+					And even if I could, it'd all be grey<br>
+					But your picture on my wall<br>
+					It reminds me that it's not so bad<br>
+					<br>
+					It's not so bad<br>
+					I drank too much last night, got bills to pay<br>
+					My head just feels in pain<br>
+					I missed the bus and there'll be hell today<br>
+					<br>
+					I'm late for work again<br>
+					And even if I'm there, they'll all imply<br>
+					That I might not last the day<br>
+					And then you call me and it's not so bad<br>
+					<br>
+					It's not so bad<br>
+					And I want to thank you<br>
+					For giving me the best day of my life<br>
+					<br>
+					Oh, just to be with you<br>
+					Is having the best day of my life<br>
+					Push the door, I'm home at last<br>
+					And I'm soaking through and through<br>
+					And then you handed me a towel<br>
+					<br>
+					And all I see is you<br>
+					And even if my house falls down now<br>
+					I wouldn't have a clue<br>
+					Because you're near me<br>
+					And I want to thank you<br>
+					For giving me the best day of my life<br>
+					<br>
+					Oh, just to be with you<br>
+					Is having the best day of my life<br>
+					And I want to thank you<br>
+					For giving me the best day of my life<br>
+					Oh, just to be with you<br>
+				</p>
+			</div>
+			<div class="bottom">
+				<input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+				<div class="icons">
+					<i class="fas fa-3x fa-step-backward" id="previous"></i>
+					<i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+					<i class="fas fa-3x fa-step-forward" id="next"></i>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-md-4" id="temp">
+		<div id="container">
+			<div class="item1">
+				<img src="{{ url_for('static', filename=album.image) }}" height="300" width="300">
+			</div>
+			<div class="item2">
+				<video width="420" height="260" id="vidplayer" controls>
+					<source id="song_video" src="{{ url_for('static', filename='Urban Hymns/Lucky Man/Lucky Man.mp4') }}" type="video/mp4">
+					Your browser does not support the video tag.
+				  </video>
+			</div>
+		</div>	
+	</div>
+</div>
+
+{% endblock %}
+	
