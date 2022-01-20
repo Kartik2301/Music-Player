@@ -71,6 +71,7 @@ body {
     align-items: center;
     border-radius: 5px;
     margin-right: 10px;
+	cursor: pointer;
 }
 
 .songItem img{
@@ -105,4 +106,8 @@ body {
 	background-color: antiquewhite;
 	padding: 10px;
 	border-radius: 5px;
+}
+
+#masterPlay {
+	cursor: pointer;
 }
